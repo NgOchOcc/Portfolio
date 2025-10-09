@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Transformer Models - Ngoc Luu</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-brand">Portfolio</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#cv" class="nav-link">CV</a></li>
+                <li><a href="../index.html#publications" class="nav-link">Publications</a></li>
+                <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Content -->
+    <article class="blog-post-page">
+        <div class="blog-post-container">
+            <a href="../index.html#blog" class="back-to-blog">
+                <i class="fas fa-arrow-left"></i> Back to Blog
+            </a>
+
+            <header class="blog-post-header">
+                <span class="blog-post-category">Machine Learning</span>
+                <h1 class="blog-post-title">Getting Started with Transformer Models</h1>
+                <div class="blog-post-meta">
+                    <span><i class="far fa-calendar"></i> January 15, 2024</span>
+                    <span><i class="far fa-clock"></i> 5 min read</span>
+                    <span><i class="far fa-user"></i> Ngoc Luu</span>
+                </div>
+            </header>
+
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80" alt="AI Blog Post" class="blog-post-image">
+
+            <div class="blog-post-content">
+                <p>
+                    Transformer models have revolutionized the field of natural language processing since their introduction in 2017.
+                    In this article, we'll explore the fundamental concepts behind transformers and understand why they've become
+                    the backbone of modern NLP systems.
+                </p>
+
+                <h2>What are Transformers?</h2>
+                <p>
+                    Transformers are a type of neural network architecture that relies entirely on attention mechanisms to process
+                    sequential data. Unlike traditional recurrent neural networks (RNNs), transformers can process entire sequences
+                    in parallel, making them much more efficient for training.
+                </p>
+
+                <h3>Key Components</h3>
+                <p>The transformer architecture consists of several key components:</p>
+                <ul>
+                    <li><strong>Self-Attention Mechanism:</strong> Allows the model to weigh the importance of different words in a sentence</li>
+                    <li><strong>Positional Encoding:</strong> Provides information about the position of words in the sequence</li>
+                    <li><strong>Multi-Head Attention:</strong> Enables the model to attend to different aspects of the input simultaneously</li>
+                    <li><strong>Feed-Forward Networks:</strong> Process the attention outputs through additional layers</li>
+                </ul>
+
+                <h2>The Attention Mechanism</h2>
+                <p>
+                    The core innovation of transformers is the self-attention mechanism. This allows each word in a sentence to
+                    "attend" to all other words, capturing complex relationships and dependencies.
+                </p>
+
+                <blockquote>
+                    "Attention is all you need" - This famous phrase from the original transformer paper highlights the power
+                    of attention mechanisms in sequence modeling.
+                </blockquote>
+
+                <h3>Example Code</h3>
+                <p>Here's a simple example of using a pre-trained transformer model with Hugging Face:</p>
+
+                <pre><code class="language-python">from transformers import AutoTokenizer, AutoModel
+
+# Load pre-trained model and tokenizer
+tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
+model = AutoModel.from_pretrained("bert-base-uncased")
+
+# Encode text
+text = "Transformers are powerful!"
+inputs = tokenizer(text, return_tensors="pt")
+
+# Get model outputs
+outputs = model(**inputs)
+print(outputs.last_hidden_state.shape)</code></pre>
+
+                <h2>Applications</h2>
+                <p>Transformers have been successfully applied to various NLP tasks:</p>
+                <ol>
+                    <li>Machine Translation</li>
+                    <li>Text Summarization</li>
+                    <li>Question Answering</li>
+                    <li>Sentiment Analysis</li>
+                    <li>Named Entity Recognition</li>
+                </ol>
+
+                <h2>Conclusion</h2>
+                <p>
+                    Transformer models have fundamentally changed how we approach natural language processing tasks.
+                    Their ability to capture long-range dependencies and process sequences in parallel has made them
+                    the foundation for state-of-the-art models like BERT, GPT, and T5.
+                </p>
+            </div>
+
+            <div class="blog-post-tags">
+                <a href="#" class="blog-post-tag">NLP</a>
+                <a href="#" class="blog-post-tag">Transformers</a>
+                <a href="#" class="blog-post-tag">Deep Learning</a>
+                <a href="#" class="blog-post-tag">Machine Learning</a>
+            </div>
+
+            <div class="blog-post-share">
+                <span>Share this post:</span>
+                <a href="https://twitter.com/intent/tweet?url=YOUR_URL" target="_blank" class="share-btn" title="Share on Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=YOUR_URL" target="_blank" class="share-btn" title="Share on LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="share-btn" title="Copy Link" onclick="copyLink(event)">
+                    <i class="fas fa-link"></i>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Ngoc Luu. All rights reserved.</p>
+            <p>Designed with <i class="fas fa-heart"></i></p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function copyLink(e) {
+            e.preventDefault();
+            navigator.clipboard.writeText(window.location.href);
+            alert('Link copied to clipboard!');
+        }
+    </script>
+</body>
+</html>

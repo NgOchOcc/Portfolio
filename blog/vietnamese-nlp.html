@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine-tuning Pre-trained Models for Vietnamese NLP - Ngoc Luu</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-brand">Portfolio</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#cv" class="nav-link">CV</a></li>
+                <li><a href="../index.html#publications" class="nav-link">Publications</a></li>
+                <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Content -->
+    <article class="blog-post-page">
+        <div class="blog-post-container">
+            <a href="../index.html#blog" class="back-to-blog">
+                <i class="fas fa-arrow-left"></i> Back to Blog
+            </a>
+
+            <header class="blog-post-header">
+                <span class="blog-post-category">Tutorial</span>
+                <h1 class="blog-post-title">Fine-tuning Pre-trained Models for Vietnamese NLP</h1>
+                <div class="blog-post-meta">
+                    <span><i class="far fa-calendar"></i> January 10, 2024</span>
+                    <span><i class="far fa-clock"></i> 8 min read</span>
+                    <span><i class="far fa-user"></i> Ngoc Luu</span>
+                </div>
+            </header>
+
+            <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?w=1200&q=80" alt="Vietnamese NLP" class="blog-post-image">
+
+            <div class="blog-post-content">
+                <p>
+                    Vietnamese is a challenging language for NLP due to its unique characteristics. In this tutorial,
+                    we'll learn how to fine-tune pre-trained language models specifically for Vietnamese text processing tasks.
+                </p>
+
+                <h2>Why Vietnamese NLP is Different</h2>
+                <p>Vietnamese language has several unique features:</p>
+                <ul>
+                    <li>Tonal language with 6 different tones</li>
+                    <li>No spaces between syllables in compound words</li>
+                    <li>Rich morphology and syntax</li>
+                    <li>Limited pre-trained models compared to English</li>
+                </ul>
+
+                <h2>Available Pre-trained Models</h2>
+                <p>Several pre-trained models are available for Vietnamese:</p>
+                <ul>
+                    <li><strong>PhoBERT:</strong> BERT for Vietnamese</li>
+                    <li><strong>viBERT:</strong> Another BERT variant</li>
+                    <li><strong>XLM-RoBERTa:</strong> Multilingual model including Vietnamese</li>
+                </ul>
+
+                <h3>Loading PhoBERT</h3>
+                <pre><code class="language-python">from transformers import AutoModel, AutoTokenizer
+
+# Load PhoBERT
+phobert = AutoModel.from_pretrained("vinai/phobert-base")
+tokenizer = AutoTokenizer.from_pretrained("vinai/phobert-base")
+
+# Example usage
+text = "Tôi yêu học máy và xử lý ngôn ngữ tự nhiên"
+input_ids = tokenizer(text, return_tensors="pt")
+outputs = phobert(**input_ids)</code></pre>
+
+                <h2>Fine-tuning Process</h2>
+                <p>Here's a step-by-step guide to fine-tune for a classification task:</p>
+
+                <h3>1. Prepare Your Dataset</h3>
+                <pre><code class="language-python">from datasets import load_dataset
+
+# Load your Vietnamese dataset
+dataset = load_dataset('csv', data_files={
+    'train': 'train.csv',
+    'test': 'test.csv'
+})
+
+# Tokenize
+def tokenize_function(examples):
+    return tokenizer(examples['text'], padding='max_length', truncation=True)
+
+tokenized_datasets = dataset.map(tokenize_function, batched=True)</code></pre>
+
+                <h3>2. Set up Training</h3>
+                <pre><code class="language-python">from transformers import TrainingArguments, Trainer
+
+training_args = TrainingArguments(
+    output_dir='./results',
+    num_train_epochs=3,
+    per_device_train_batch_size=16,
+    per_device_eval_batch_size=64,
+    warmup_steps=500,
+    weight_decay=0.01,
+    logging_dir='./logs',
+)
+
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=tokenized_datasets['train'],
+    eval_dataset=tokenized_datasets['test']
+)</code></pre>
+
+                <h3>3. Train the Model</h3>
+                <pre><code class="language-python">trainer.train()</code></pre>
+
+                <h2>Best Practices</h2>
+                <ol>
+                    <li>Use word segmentation for Vietnamese text</li>
+                    <li>Handle tone marks properly</li>
+                    <li>Consider using data augmentation</li>
+                    <li>Fine-tune learning rate carefully</li>
+                    <li>Monitor validation metrics</li>
+                </ol>
+
+                <h2>Conclusion</h2>
+                <p>
+                    Fine-tuning pre-trained models for Vietnamese NLP can achieve excellent results with proper
+                    preprocessing and training strategies. Start with PhoBERT and adjust based on your specific use case.
+                </p>
+            </div>
+
+            <div class="blog-post-tags">
+                <a href="#" class="blog-post-tag">Vietnamese</a>
+                <a href="#" class="blog-post-tag">NLP</a>
+                <a href="#" class="blog-post-tag">Fine-tuning</a>
+                <a href="#" class="blog-post-tag">Tutorial</a>
+            </div>
+
+            <div class="blog-post-share">
+                <span>Share this post:</span>
+                <a href="https://twitter.com/intent/tweet?url=YOUR_URL" target="_blank" class="share-btn">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=YOUR_URL" target="_blank" class="share-btn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="share-btn" onclick="copyLink(event)">
+                    <i class="fas fa-link"></i>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Ngoc Luu. All rights reserved.</p>
+            <p>Designed with <i class="fas fa-heart"></i></p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function copyLink(e) {
+            e.preventDefault();
+            navigator.clipboard.writeText(window.location.href);
+            alert('Link copied to clipboard!');
+        }
+    </script>
+</body>
+</html>
