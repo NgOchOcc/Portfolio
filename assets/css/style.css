@@ -1,0 +1,19 @@
+/* ==========================================================================
+   PORTFOLIO - MAIN STYLESHEET
+   Modular CSS Architecture
+   ========================================================================== */
+
+/* Base Styles */
+@import 'base/reset.css';
+
+/* Components */
+@import 'components/navbar.css';
+@import 'components/buttons.css';
+
+/* Sections */
+@import 'sections/hero.css';
+@import 'sections/about.css';
+@import 'sections/sections.css';
+
+/* Utilities */
+@import 'utilities/animations.css';

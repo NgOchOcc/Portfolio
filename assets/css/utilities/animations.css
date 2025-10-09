@@ -1,0 +1,54 @@
+/* ==========================================================================
+   UTILITIES - ANIMATIONS & EFFECTS
+   ========================================================================== */
+
+/* Performance Optimization */
+.btn,
+.nav-link,
+.skill-tag,
+.blog-card,
+.publication-card {
+    will-change: transform;
+}
+
+/* Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Shimmer Animation for Name Highlight */
+.name-highlight {
+    background: linear-gradient(90deg,
+        #fff 0%,
+        #a78bfa 25%,
+        #fff 50%,
+        #a78bfa 75%,
+        #fff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer-gradient 3s linear infinite;
+}
+
+@keyframes shimmer-gradient {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Glow Effect for Buttons on Hover */
+.btn-primary:hover {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4),
+                0 0 40px rgba(37, 99, 235, 0.2);
+}

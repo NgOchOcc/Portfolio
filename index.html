@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ngoc Luu</title>
+
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS - Modular -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Portfolio</div>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#cv" class="nav-link">CV</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Neural Network Background -->
+        <div id="hero-particles" class="hero-particles"></div>
+
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="name-highlight">Ngoc Luu</span>
+            </h1>
+            <div class="hero-role-wrapper">
+                <p class="hero-subtitle">
+                    <span class="typing-text"></span>
+                    <span class="cursor">|</span>
+                </p>
+            </div>
+            <p class="hero-description">
+                Passionate about AI, Machine Learning, and Natural Language Processing.
+            </p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">
+                    <i class="fas fa-user"></i> About Me
+                </a>
+                <!-- <a href="#contact" class="btn btn-outline">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a> -->
+            </div>
+            <div class="hero-social">
+                <a href="https://github.com/NgOchOcc" target="_blank" class="hero-social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="www.linkedin.com/in/ngọc-lưu-4b88b6263" target="_blank" class="hero-social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://scholar.google.com/citations?user=_-hgJI4AAAAJ" target="_blank" class="hero-social-link">
+                    <i class="fas fa-graduation-cap"></i>
+                </a>
+                <a href="mailto:ngochoc1704@example.com" class="hero-social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right" data-aos-delay="100">
+                    <img src="assets/images/profile/avatar.jpg" alt="Ngoc Luu Profile Photo">
+                </div>
+                <div class="about-text" data-aos="fade-left" data-aos-delay="200">
+                    <h3>Ngoc Luu</h3>
+                    <p class="about-role">AI Researcher</p>
+                    <p class="about-description">
+                        I'm Ngoc Luu, an AI Researcher with a strong passion for artificial intelligence, particularly in Natural Language Processing (NLP) and Machine Learning (ML).
+I graduated with distinction in Computer Science Bachelor's degree from Hanoi University of Science & Technology (HUST) in 2024. During my time there, I conducted research at the Data Science Laboratory under the guidance of Dr.Linh Ngo.
+                    </p>
+
+                    <div class="skills">
+                        <h4>Skill</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Natural Language Processing</span>
+                            <span class="skill-tag">Research</span>
+                            <span class="skill-tag">Engineer</span>
+                            <span class="skill-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="section cv-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Personal Profile</h2>
+
+            <div class="cv-content">
+                <!-- Education -->
+                <div class="cv-block" data-aos="fade-up" data-aos-delay="100">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <!-- <div class="cv-item">
+                        <div class="cv-item-header">
+                            <h4>PhD in [Your Field]</h4>
+                            <span class="cv-date">2020 - Present</span>
+                        </div>
+                        <p class="cv-institution">ABC University</p>
+                        <p class="cv-description">Thesis: [Your Thesis Title]</p>
+                    </div> -->
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <h4>Computer Science BS</h4>
+                            <span class="cv-date">2020 - 2024</span>
+                        </div>
+                        <p class="cv-institution">Ha Noi University of Science and Technology</p>
+                        <p class="cv-description">GPA: 3.62/4.0</p>
+                        <p class="cv-thesis">Thesis: Continual Learning for Relation Extraction</p>
+                    </div>
+
+                </div>
+
+                <!-- Experience -->
+                <div class="cv-block" data-aos="fade-up" data-aos-delay="200">
+                    <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
+
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <h4>Research Resident</h4>
+                            <span class="cv-date">10/2025 - Present</span>
+                        </div>
+                        <p class="cv-institution">Qualcomm AI</p>
+                    </div>
+
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <h4>AI Engineer</h4>
+                            <span class="cv-date">10/2024 - 10/2025</span>
+                        </div>
+                        <p class="cv-institution">PREP Company</p>
+                        <ul class="cv-list">
+                            <li>Develop and enhancing a comprehensive scoring system for English proficiency exams.</li>
+                            <li>Develop a virtual classroom system that allows students to practice.</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <h4>NLP Research Engineer</h4>
+                            <span class="cv-date">4/2024 - 10/2024</span>
+                        </div>
+                        <p class="cv-institution">CMC ATI</p>
+                        <ul class="cv-list">
+                            <li>Build an internal chatbot system to serve employees.</li>
+                            <li>Develop NER models to extract key information from official documents.</li>
+                            <li>Develop a post-processing model for ASR) to improve accuracy in speech-to-text tasks.</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <h4>AI Intern</h4>
+                            <span class="cv-date">6/2023 - 9/2023</span>
+                        </div>
+                        <p class="cv-institution">DNSE Company</p>
+                        <ul class="cv-list">
+                            <li>Develop a chatbot system that can answer users’ questions in the field of stock</li>
+                            <li>Learn about technologies and frameworks used for projects such as Langchain, Elastic Search</li>
+                            <li>Train the Bartpho model for the problem of combining multiple summaries in the field of stock</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Download CV Button -->
+                <div class="cv-download">
+                    <a href="assets/docs/cv.pdf" class="btn btn-secondary" download>
+                        <i class="fas fa-download"></i> Download CV (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section publications-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Publications</h2>
+            <div class="publications-grid">
+
+                <div class="publication-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="publication-header">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="publication-year">2025</span>
+                    </div>
+                    <h3 class="publication-title">
+                        Adaptive Prompting for Continual Relation Extraction: Within-Task Variance Perspective
+                    </h3>
+                    <p class="publication-authors">
+                        Minh Le, <strong>Tien Ngoc Luu</strong>, An Nguyen The, Thanh-Thien Le, Trang Nguyen, Tung Thanh Nguyen, Linh Ngo Van, Thien Huu Nguyen
+                    </p>
+                    <p class="publication-venue">
+                        AAAI 2025 - 39th AAAI Conference on Artificial Intelligence <strong>Oral Presentation</strong>
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/pdf/2412.08285" class="pub-link"><i class="fas fa-link"></i> Paper</a>
+                        <a href="https://arxiv.org/abs/2412.08285" class="pub-link"><i class="fas fa-quote-right"></i> Cite</a>
+                    </div>
+                </div>
+
+                <div class="publication-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="publication-header">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="publication-year">2025</span>
+                    </div>
+                    <h3 class="publication-title">
+                        Optimizing Answer Generator in Vietnamese Legal Question Answering Systems Using Language Models
+                    </h3>
+                    <p class="publication-authors">
+                        Huong Le, <strong>Tien Ngoc Luu</strong>, Thanh Nguyen, Tuan Dao, Sang Dinh
+                    </p>
+                    <p class="publication-venue">
+                        ACM Transactions on Asian and Low-Resource Language Information Processing
+                    </p>
+                    <div class="publication-links">
+                        <a href="https://dl.acm.org/doi/10.1145/3732938" class="pub-link"><i class="fas fa-link"></i> Paper</a>
+                        <a href="https://dl.acm.org/doi/10.1145/3732938" class="pub-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section blog-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Blog</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Thoughts, tutorials, and insights about AI, ML, and NLP</p>
+
+            <div class="blog-grid">
+                <article class="blog-card" data-blog="blog/transformers.html" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" alt="AI Blog Post">
+                        <div class="blog-category">Machine Learning</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date"><i class="far fa-calendar"></i> January 15, 2024</span>
+                            <span class="blog-read-time"><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3 class="blog-title">Getting Started with Transformer Models</h3>
+                        <p class="blog-excerpt">
+                            An introduction to transformer architecture and how it revolutionized natural language processing.
+                            Learn about attention mechanisms and their applications.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">NLP</span>
+                            <span class="blog-tag">Transformers</span>
+                            <span class="blog-tag">Deep Learning</span>
+                        </div>
+                        <a href="blog/transformers.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-blog="blog/vietnamese-nlp.html" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&q=80" alt="Data Science Blog Post">
+                        <div class="blog-category">Tutorial</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date"><i class="far fa-calendar"></i> January 10, 2024</span>
+                            <span class="blog-read-time"><i class="far fa-clock"></i> 8 min read</span>
+                        </div>
+                        <h3 class="blog-title">Fine-tuning Pre-trained Models for Vietnamese NLP</h3>
+                        <p class="blog-excerpt">
+                            Step-by-step guide on how to fine-tune large language models for Vietnamese text processing.
+                            Includes code examples and best practices.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Vietnamese</span>
+                            <span class="blog-tag">Fine-tuning</span>
+                            <span class="blog-tag">Tutorial</span>
+                        </div>
+                        <a href="blog/vietnamese-nlp.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-blog="blog/llm-future.html" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80" alt="Research Blog Post">
+                        <div class="blog-category">Research</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date"><i class="far fa-calendar"></i> January 5, 2024</span>
+                            <span class="blog-read-time"><i class="far fa-clock"></i> 10 min read</span>
+                        </div>
+                        <h3 class="blog-title">The Future of Large Language Models</h3>
+                        <p class="blog-excerpt">
+                            Exploring the latest advancements in LLMs and their potential impact on various industries.
+                            A deep dive into emerging trends and challenges.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">LLM</span>
+                            <span class="blog-tag">AI</span>
+                            <span class="blog-tag">Future</span>
+                        </div>
+                        <a href="blog/llm-future.html" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=800&q=80" alt="Programming Blog Post">
+                        <div class="blog-category">Programming</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date"><i class="far fa-calendar"></i> December 28, 2023</span>
+                            <span class="blog-read-time"><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3 class="blog-title">Building Efficient Data Pipelines with Python</h3>
+                        <p class="blog-excerpt">
+                            Learn how to design and implement scalable data pipelines for machine learning projects.
+                            Covers best practices and common pitfalls to avoid.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Python</span>
+                            <span class="blog-tag">Data Pipeline</span>
+                            <span class="blog-tag">MLOps</span>
+                        </div>
+                        <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800&q=80" alt="AI Ethics Blog Post">
+                        <div class="blog-category">Opinion</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date"><i class="far fa-calendar"></i> December 20, 2023</span>
+                            <span class="blog-read-time"><i class="far fa-clock"></i> 7 min read</span>
+                        </div>
+                        <h3 class="blog-title">Ethics in AI: Challenges and Responsibilities</h3>
+                        <p class="blog-excerpt">
+                            Discussing the ethical considerations when developing AI systems.
+                            How can we build responsible and fair artificial intelligence?
+                        </p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Ethics</span>
+                            <span class="blog-tag">AI</span>
+                            <span class="blog-tag">Society</span>
+                        </div>
+                        <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Data Analysis Blog Post">
+                        <div class="blog-category">Data Science</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-date"><i class="far fa-calendar"></i> December 15, 2023</span>
+                            <span class="blog-read-time"><i class="far fa-clock"></i> 9 min read</span>
+                        </div>
+                        <h3 class="blog-title">Advanced Text Analysis Techniques</h3>
+                        <p class="blog-excerpt">
+                            Exploring advanced techniques for analyzing large text corpora.
+                            From topic modeling to sentiment analysis and beyond.
+                        </p>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Text Analysis</span>
+                            <span class="blog-tag">NLP</span>
+                            <span class="blog-tag">Analytics</span>
+                        </div>
+                        <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="blog-load-more">
+                <button class="btn btn-secondary" id="loadMoreBtn">
+                    <i class="fas fa-plus"></i> Load More Posts
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Contact</h2>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
+                    <h3>Get In Touch</h3>
+                    <p>I'm always open to discussing projects, research opportunities, or collaborations.</p>
+
+                    <div class="social-links">
+                        <a href="mailto:ngochoc1704@example.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>ngochoc1704@example.com</span>
+                        </a>
+                        <a href="https://github.com/NgOchOcc" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/NgOchOcc</span>
+                        </a>
+                        <a href="www.linkedin.com/in/ngọc-lưu-4b88b6263" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin.com/in/ngọc-lưu-4b88b6263</span>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=_-hgJI4AAAAJ" target="_blank" class="social-link">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Google Scholar</span>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact-form" data-aos="fade-left" data-aos-delay="200">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JS - Modular (ES6 Modules) -->
+    <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
